@@ -28,7 +28,7 @@ function App() {
               element={<Signup />}
             />
             <Route 
-              path="//diary-details/:id"
+              path="/diary-details/:id"
               element={<DiaryDetails />}
             />
             <Route 
