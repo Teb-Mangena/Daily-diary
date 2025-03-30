@@ -12,7 +12,7 @@ const Navbar = () => {
       </div>
 
       <div className="right-section">
-        <ul>
+        <ul className="nav-links">
           <li><Link to='/'>Home</Link></li>
           <li><Link to='/admin-dashboard'>admin dashboard</Link></li>
           <li><Link to='/about'>about</Link></li>

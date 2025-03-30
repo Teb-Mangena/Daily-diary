@@ -6,6 +6,7 @@ import Login from "./pages/FormsPages/Login";
 import Signup from "./pages/FormsPages/Signup";
 import AdminDashboard from "./pages/AdminPages/AdminDashboard";
 import About from "./pages/About";
+import DiaryDetails from "./components/DiaryDetails";
 
 function App() {
   return (
@@ -25,6 +26,10 @@ function App() {
             <Route 
               path="/signup"
               element={<Signup />}
+            />
+            <Route 
+              path="//diary-details/:id"
+              element={<DiaryDetails />}
             />
             <Route 
               path="/admin-dashboard"
