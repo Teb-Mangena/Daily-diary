@@ -1,26 +1,29 @@
 import { useEffect,useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { formatDistanceToNow } from "date-fns";
+import EditButton from "./buttons/EditButton";
+import DeleteButton from "./buttons/DeleteButton";
 
 const DiaryDetails = () => {
   const {id} = useParams();
-    const [diary,setDiary] = useState(null);
-    const [error,setError] = useState(false);
+  const [diary,setDiary] = useState(null);
+  const [error,setError] = useState(false);
 
-    useEffect(()=>{
-      const fetchDiary = async () => {
-        const response = await fetch(`/api/diary/${id}`);
-        const data = await response.json();
+  useEffect(()=>{
+    const fetchDiary = async () => {
+    const response = await fetch(`/api/diary/${id}`);
+    const data = await response.json();
 
-        if(!response.ok){
-          setError(data.error);
-        }
+    if(!response.ok){
+      setError(data.error);
+    }
 
-        setDiary(data);
-      }
+    setDiary(data);
+    }
 
-      fetchDiary();
-    },[id]);
+    fetchDiary();
+  },[id]);
 
 
   return ( 
@@ -35,9 +38,9 @@ const DiaryDetails = () => {
               </p>
             </div>
             <div className="right-section">
-              <p className="posted">Posted: {diary.createdAt}</p>
-              <button className="edit">Edit</button>
-              <button className="delete">Delete</button>
+              <p>Posted {formatDistanceToNow(new Date(diary.createdAt), {addSuffix:true})}</p>
+              <EditButton id={diary._id} />
+              <DeleteButton id={diary._id} />
               <Link to='/'><p>Go Back</p></Link>
             </div>
           </>

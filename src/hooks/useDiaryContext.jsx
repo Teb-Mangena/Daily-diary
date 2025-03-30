@@ -4,9 +4,9 @@ import { DiaryContext } from "../context/DiaryContext";
 export const useDiaryContext = () => {
   const context = useContext(DiaryContext);
 
-  if (!context) {
-    throw new Error("useWorkoutContext must be used within a WorkoutContextProvider");
+  if (!context || typeof context !== "object") {
+    throw new Error("useDiaryContext must be used within a DiaryContextProvider and provide a valid value");
   }
 
   return context;
-}
+};
