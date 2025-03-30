@@ -1,8 +1,55 @@
+import { useState } from "react";
+
 const Signup = () => {
+  const [email,setEmail] = useState('');
+  const [password,setPassword] = useState('');
+  const [name,setName] = useState('');
+  const [lastName,setLastName] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    console.log(name,lastName,email,password);
+  }
+
   return ( 
-    <div className="signup">
-      <h2>Signup</h2>
-    </div>
+    <form className="login" onSubmit={handleSubmit}>
+      <h2 className="login-header">Login</h2>
+
+      <label>Name:</label>
+      <input 
+        type="email"
+        placeholder="Enter your email"
+        onChange={(e)=>setName(e.target.value)}
+        value={name} 
+      />
+
+      <label>Last Name:</label>
+      <input 
+        type="email"
+        placeholder="Enter your email"
+        onChange={(e)=>setLastName(e.target.value)}
+        value={lastName} 
+      />
+
+      <label>Email:</label>
+      <input 
+        type="email"
+        placeholder="Enter your email"
+        onChange={(e)=>setEmail(e.target.value)}
+        value={email} 
+      />
+
+      <label>Password:</label>
+      <input 
+        type="password" 
+        placeholder="Enter your password"
+        onChange={(e)=>setPassword(e.target.value)}
+        value={password} 
+      />
+
+      <button>Sign up</button>
+    </form>
    );
 }
  
