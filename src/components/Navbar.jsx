@@ -31,7 +31,7 @@ const Navbar = () => {
           <li><Link to='/'>Home</Link></li>
           <li>
             {user && user.role === "admin" ? (
-              <Link to='/admin-dashboard'>admin dashboard</Link>
+              <Link to='/admin-dashboard'>Admin dashboard</Link>
             ) : ""}
           </li>
           <li><Link to='/about'>about</Link></li>

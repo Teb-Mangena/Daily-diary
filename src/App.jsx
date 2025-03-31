@@ -9,6 +9,7 @@ import Signup from "./pages/FormsPages/Signup";
 import AdminDashboard from "./pages/AdminPages/AdminDashboard";
 import About from "./pages/About";
 import DiaryDetails from "./components/DiaryDetails";
+import UserManagement from "./pages/AdminPages/UserManagement";
 
 function App() {
   const { user } = useAuthContext(); // Ensure user is destructured properly
@@ -33,11 +34,15 @@ function App() {
             />
             <Route 
               path="/diary-details/:id"
-              element={user ? <DiaryDetails /> : <Navigate to='/login' />} // Protect DiaryDetails route
+              element={user ? <DiaryDetails /> : <Navigate to='/login' />}
             />
             <Route 
               path="/admin-dashboard"
               element={user && user.role === "admin" ? <AdminDashboard /> : <Navigate to='/login' />}
+            />
+            <Route 
+              path="/user-management"
+              element={user && user.role === "admin" ? <UserManagement /> : <Navigate to='/login' />}
             />
             <Route 
               path="/about"
