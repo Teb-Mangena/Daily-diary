@@ -29,16 +29,23 @@ const Navbar = () => {
         )}
         <ul className="nav-links">
           <li><Link to='/'>Home</Link></li>
-          <li><Link to='/admin-dashboard'>admin dashboard</Link></li>
+          <li>
+            {user && user.role === "admin" ? (
+              <Link to='/admin-dashboard'>admin dashboard</Link>
+            ) : ""}
+          </li>
           <li><Link to='/about'>about</Link></li>
-          <li><Link to='/login'>login</Link></li>
-          <li><Link to='/signup'>signup</Link></li>
         </ul>
-
-        <button className="btn-logout" onClick={handleLogOut}>
-        Logout
-      </button>
-
+        {!user ? (
+            <ul className="no-user">
+              <li><Link to='/login'>login</Link></li>
+              <li><Link to='/signup'>signup</Link></li>
+            </ul>
+          ) : (
+            <button className="btn-logout" onClick={handleLogOut}>
+              Logout
+            </button>
+          )}
       </div>
     </nav>
    );
