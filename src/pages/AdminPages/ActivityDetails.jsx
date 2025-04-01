@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { formatDistanceToNow } from "date-fns";
 import AdminNav from "../../components/AdminComponents/AdminNav";
+import AdminEditButton from "../../components/buttons/AdminEditButton";
+import AdminDeleteButton from "../../components/buttons/AdminDeleteButton";
 
 const ActivityDetails = () => {
   const { id } = useParams();
@@ -11,7 +13,6 @@ const ActivityDetails = () => {
   useEffect(() => {
     const fetchDiary = async () => {
       const response = await fetch(`/api/admin-activity/${id}`);
-
       const data = await response.json();
 
       if (!response.ok) {
@@ -46,6 +47,8 @@ const ActivityDetails = () => {
                     addSuffix: true,
                   })}
                 </p>
+                  <AdminEditButton id={id} />
+                  <AdminDeleteButton id={id}/>
               </div>
             </div>
           )}
