@@ -10,7 +10,7 @@ const Reports = () => {
         <AdminNav />
 
         <div className="news">
-
+          <h3 className="reports">Will be availabe later</h3>
         </div>
       </div>
     </div>

@@ -12,6 +12,7 @@ import DiaryDetails from "./components/DiaryDetails";
 import UserManagement from "./pages/AdminPages/UserManagement";
 import Reports from "./pages/AdminPages/Reports";
 import Activity from "./pages/AdminPages/Activity";
+import ActivityDetails from "./pages/AdminPages/ActivityDetails";
 
 function App() {
   const { user } = useAuthContext(); // Ensure user is destructured properly
@@ -55,6 +56,11 @@ function App() {
             <Route 
               path="/activity"
               element={user && user.role === "admin" ? <Activity /> : <Navigate to='/login' />}
+            />
+
+            <Route 
+              path="/activity-details/:id"
+              element={user && user.role === "admin" ? <ActivityDetails /> : <Navigate to='/login' />}
             />
 
             {/* Other sites */}
