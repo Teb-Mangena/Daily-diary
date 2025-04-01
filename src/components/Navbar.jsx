@@ -34,7 +34,7 @@ const Navbar = () => {
               <Link to='/admin-dashboard'>Admin dashboard</Link>
             ) : ""}
           </li>
-          <li><Link to='/about'>about</Link></li>
+          <li><Link to='/about'>About</Link></li>
         </ul>
         {!user ? (
             <ul className="no-user">
