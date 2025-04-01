@@ -1,6 +1,8 @@
 import { formatDistanceToNow } from "date-fns";
 import { useEffect, useState } from "react";
 import AdminNav from "../../components/AdminComponents/AdminNav";
+import EditUserbtn from "../../components/buttons/EditUserbtn";
+import DeleteUserbtn from "../../components/buttons/DeleteUserbtn";
 
 const UserManagement = () => {
   const [error, setError] = useState(false);
@@ -47,6 +49,7 @@ const UserManagement = () => {
                     <p className="name">Name: {getUser.name}</p>
                     <p className="last-name">Last Namee: {getUser.lastName}</p>
                     <p className="user-emails">Email: {getUser.email}</p>
+                    <p className="user-role">Role: {getUser.role}</p>
                     <p className="joined-when">
                       Joined{" "}
                       {formatDistanceToNow(new Date(getUser.createdAt), {
@@ -54,8 +57,8 @@ const UserManagement = () => {
                       })}
                     </p>
                     <div className="action-buttons">
-                      <button className="btn-update">Edit</button>
-                      <button className="btn-remove">Delete</button>
+                      <EditUserbtn id={getUser._id} />
+                      <DeleteUserbtn id={getUser._id} />
                     </div>
                   </div>
                 ))}
