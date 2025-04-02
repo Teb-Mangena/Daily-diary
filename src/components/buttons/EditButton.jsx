@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 const EditButton = ({ id }) => {
   const [error, setError] = useState(false);
@@ -11,13 +12,17 @@ const EditButton = ({ id }) => {
   const [showEditFields, setShowEditFields] = useState(false);
   const [isFetchingData, setIsFetchingData] = useState(false); // State for fetching data
   const navigate = useNavigate();
-
+  const {user} = useAuthContext();
   const update = { title, snippet, body };
 
   // Fetch existing data when edits-div is shown
   useEffect(() => {
     if (showEditFields) {
       setIsFetchingData(true);
+
+      if(!user){
+        return 
+      }
 
       fetch(`/api/diary/${id}`)
         .then((response) => response.json())
@@ -34,7 +39,7 @@ const EditButton = ({ id }) => {
           setIsFetchingData(false);
         });
     }
-  }, [showEditFields, id]);
+  }, [showEditFields, id,user]);
 
   const handleEdit = async () => {
     setIsLoading(true);
@@ -43,6 +48,7 @@ const EditButton = ({ id }) => {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
+        'Authorization':`Bearer ${user.token}`
       },
       body: JSON.stringify(update),
     });

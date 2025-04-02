@@ -1,19 +1,25 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 const DeleteButton = ({id}) => {
   const [error,setError] = useState(false);
   const [success,setSuccess] = useState(false);
   const [isLoading,setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const {user} = useAuthContext();
 
   const handleDelete = async () => {
     setIsLoading(true);
 
+    if(!user){
+      return 
+    }
+
     const response = await fetch(`/api/diary/${id}`,{
       method:'DELETE',
       headers: {
-        'Content-Type':'application/json'
+        'Authorization':`Bearer ${user.token}`
       },
     });
 

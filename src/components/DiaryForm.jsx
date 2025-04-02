@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDiaryContext } from "../hooks/useDiaryContext";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 const DiaryForm = () => {
   const [title,setTitle] = useState('');
@@ -10,15 +11,22 @@ const DiaryForm = () => {
   const [isLoading,setIsLoading] = useState(false);
 
   const {dispatch} = useDiaryContext();
+  const {user} = useAuthContext();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
 
+    if(!user){
+      setError('You must be logged in');
+      return
+    }
+
     const response = await fetch('/api/diary',{
       method: 'POST',
       headers: {
-        'Content-Type':'application/json'
+        'Content-Type':'application/json',
+        'Authorization':`Bearer ${user.token}`
       },
       body: JSON.stringify({title,snippet,body})
     });

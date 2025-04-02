@@ -1,36 +1,48 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Diaries from "../components/Diaries";
 import { useDiaryContext } from "../hooks/useDiaryContext";
+import { useAuthContext } from "../hooks/useAuthContext";
 import DiaryForm from "../components/DiaryForm";
 
 const HomePage = () => {
   const { diaries, dispatch } = useDiaryContext();
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
+
+  const {user} = useAuthContext();
 
   useEffect(() => {
     const fetchDiaries = async () => {
-      const response = await fetch("/api/diary");
-        const data = await response.json();
-
-        if (!response.ok) {
-          setError(data.error);
+      const response = await fetch("/api/diary",{
+        headers: {
+          'Authorization':`Bearer ${user.token}`
         }
+      });
 
-        dispatch({ type: "SET_DIARIES", payload: data });
+      const data = await response.json();
+
+      if (response.ok) {
+        dispatch({ type: 'SET_DIARIES', payload: data });
+        // setError(data.error);
+      }
+
     };
 
-    fetchDiaries();
-  }, [dispatch]);
+    if(user){
+      fetchDiaries();
+    }
+  }, [dispatch,user]);
 
   return (
     <div className="grid-display-home">
       <div className="HomePage">
-        <h1>My Diaries - username</h1>
+        <h1>My Diaries - {user.name}</h1>
         <div className="personal-diary">
           {diaries &&
-            diaries.map((diary) => <Diaries diary={diary} key={diary._id} />)}
+            diaries.map((diary) => (
+              <Diaries diary={diary} key={diary._id} />
+            ))}
         </div>
-        {error && <div className="err-mssg">{error}</div>}{" "}
+        {/* {error && <div className="err-mssg">{error}</div>}{" "} */}
         {/* Display error if exists */}
       </div>
       <div className="diary-form">

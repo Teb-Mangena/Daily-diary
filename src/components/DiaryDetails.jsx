@@ -4,15 +4,22 @@ import { Link } from "react-router-dom";
 import { formatDistanceToNow } from "date-fns";
 import EditButton from "./buttons/EditButton";
 import DeleteButton from "./buttons/DeleteButton";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 const DiaryDetails = () => {
   const {id} = useParams();
+  const {user} = useAuthContext();
   const [diary,setDiary] = useState(null);
   const [error,setError] = useState(false);
+  
 
   useEffect(()=>{
     const fetchDiary = async () => {
-    const response = await fetch(`/api/diary/${id}`);
+    const response = await fetch(`/api/diary/${id}`,{
+      headers: {
+        'Authorization':`Bearer ${user.token}`
+      }
+    });
     const data = await response.json();
 
     if(!response.ok){
@@ -22,8 +29,10 @@ const DiaryDetails = () => {
     setDiary(data);
     }
 
-    fetchDiary();
-  },[id]);
+    if(user){
+      fetchDiary();
+    }
+  },[id,user]);
 
 
   return ( 
