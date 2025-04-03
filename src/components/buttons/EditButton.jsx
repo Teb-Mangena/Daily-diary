@@ -25,7 +25,7 @@ const EditButton = ({ id }) => {
         return 
       }
 
-      fetch(`http://localhost:5050/api/diary/${id}`)
+      fetch(`https://daily-diary-2-1ebf2ddc2803.herokuapp.com/api/diary/${id}`)
         .then((response) => response.json())
         .then((data) => {
           if (data) {

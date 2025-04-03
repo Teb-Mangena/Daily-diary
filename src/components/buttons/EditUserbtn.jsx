@@ -19,7 +19,7 @@ const EditUserbtn = ({ id }) => {
     if (showEditFields) {
       setIsFetchingData(true);
 
-      fetch(`http://localhost:5050/api/user/${id}`)
+      fetch(`https://daily-diary-2-1ebf2ddc2803.herokuapp.com/api/user/${id}`)
         .then((response) => response.json())
         .then((data) => {
           if (data) {

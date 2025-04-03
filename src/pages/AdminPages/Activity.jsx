@@ -14,7 +14,7 @@ const Activity = () => {
   const handleSubmit = async () => {
     setIsLoading(true);
 
-    const response = await fetch('http://localhost:5050/api/admin-activity',{
+    const response = await fetch('https://daily-diary-2-1ebf2ddc2803.herokuapp.com/api/admin-activity',{
       method:'POST',
       headers: {
         'Content-Type':'application/json'

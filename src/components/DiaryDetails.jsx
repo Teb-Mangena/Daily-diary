@@ -16,7 +16,7 @@ const DiaryDetails = () => {
 
   useEffect(()=>{
     const fetchDiary = async () => {
-    const response = await fetch(`http://localhost:5050/api/diary/${id}`,{
+    const response = await fetch(`https://daily-diary-2-1ebf2ddc2803.herokuapp.com/api/diary/${id}`,{
       headers: {
         'Authorization':`Bearer ${user.token}`
       }

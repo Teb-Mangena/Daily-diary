@@ -23,7 +23,7 @@ const DiaryForm = () => {
       return
     }
 
-    const response = await fetch('http://localhost:5050/api/diary',{
+    const response = await fetch('https://daily-diary-2-1ebf2ddc2803.herokuapp.com/api/diary',{
       method: 'POST',
       headers: {
         'Content-Type':'application/json',
