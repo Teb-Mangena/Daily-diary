@@ -10,7 +10,7 @@ const About = () => {
         </div>
         <div className="about-me-info">
           <h2>Hi!!</h2>
-          <p>My name is Tebatso Mangena</p>
+          <p>My name is Tebatso Mangena and im willing to make every person's life a secret</p>
           <p>
             I created Daily Diary, a secure online journaling platform, because
             I wanted to provide a safe space for everyone to reflect, express

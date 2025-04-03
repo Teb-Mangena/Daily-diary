@@ -11,7 +11,7 @@ const DeleteUserbtn = ({id}) => {
   const handleDelete = async () => {
     setIsLoading(true);
 
-    const response = await fetch(`/api/user/${id}`,{
+    const response = await fetch(`http://localhost:5050/api/user/${id}`,{
       method:'DELETE',
       headers: {
         'Content-Type':'application/json'

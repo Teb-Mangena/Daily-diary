@@ -25,7 +25,7 @@ const EditButton = ({ id }) => {
         return 
       }
 
-      fetch(`/api/diary/${id}`)
+      fetch(`http://localhost:5050/api/diary/${id}`)
         .then((response) => response.json())
         .then((data) => {
           if (data) {

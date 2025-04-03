@@ -19,7 +19,7 @@ const EditUserbtn = ({ id }) => {
     if (showEditFields) {
       setIsFetchingData(true);
 
-      fetch(`/api/user/${id}`)
+      fetch(`http://localhost:5050/api/user/${id}`)
         .then((response) => response.json())
         .then((data) => {
           if (data) {

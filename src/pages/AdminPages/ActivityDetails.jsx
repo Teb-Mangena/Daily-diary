@@ -13,7 +13,7 @@ const ActivityDetails = () => {
 
   useEffect(() => {
     const fetchDiary = async () => {
-      const response = await fetch(`/api/admin-activity/${id}`);
+      const response = await fetch(`http://localhost:5050/api/admin-activity/${id}`);
       const data = await response.json();
 
       if (!response.ok) {

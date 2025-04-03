@@ -15,7 +15,7 @@ const UserManagement = () => {
     const fetchUsers = async () => {
       setIsLoading(true);
 
-      const response = await fetch("/api/user");
+      const response = await fetch("http://localhost:5050/api/user");
       const data = await response.json();
 
       if (!response.ok) {

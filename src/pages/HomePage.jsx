@@ -12,7 +12,7 @@ const HomePage = () => {
 
   useEffect(() => {
     const fetchDiaries = async () => {
-      const response = await fetch("/api/diary",{
+      const response = await fetch("http://localhost:5050/api/diary",{
         headers: {
           'Authorization':`Bearer ${user.token}`
         }

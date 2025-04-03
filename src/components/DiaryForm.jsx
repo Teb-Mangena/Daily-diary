@@ -23,7 +23,7 @@ const DiaryForm = () => {
       return
     }
 
-    const response = await fetch('/api/diary',{
+    const response = await fetch('http://localhost:5050/api/diary',{
       method: 'POST',
       headers: {
         'Content-Type':'application/json',

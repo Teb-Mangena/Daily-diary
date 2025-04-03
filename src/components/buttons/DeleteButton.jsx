@@ -17,7 +17,7 @@ const DeleteButton = ({id}) => {
       return 
     }
 
-    const response = await fetch(`/api/diary/${id}`,{
+    const response = await fetch(`http://localhost:5050/api/diary/${id}`,{
       method:'DELETE',
       headers: {
         'Authorization':`Bearer ${user.token}`

@@ -18,7 +18,7 @@ const AdminEditButton = ({ id }) => {
     if (showEditFields) {
       setIsFetchingData(true);
 
-      fetch(`/api/diary/${id}`)
+      fetch(`http://localhost:5050/api/diary/${id}`)
         .then((response) => response.json())
         .then((data) => {
           if (data) {
