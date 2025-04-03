@@ -1,0 +1,35 @@
+/* Main container uses a CSS Grid to create two columns for larger screens */
+.grid-display-home {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Styling for the diaries list section */
+/* .HomePage {
+  
+} */
+
+.personal-diary {
+  margin-top: 1rem;
+}
+
+/* Styling for the diary form - an accent box on the side */
+.diary-form {
+  background-color: #f7f7f7;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Responsive adjustments: stack columns vertically on screens 768px wide or less */
+@media (max-width: 768px) {
+  .grid-display-home {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .diary-form {
+    margin-top: 2rem;
+  }
+}

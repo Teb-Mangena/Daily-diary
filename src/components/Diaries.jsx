@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { formatDistanceToNow } from "date-fns";
+import '../styles/Diaries.css';
 
 const Diaries = ({ diary }) => {
   const createdAt = diary.createdAt ? new Date(diary.createdAt) : null;

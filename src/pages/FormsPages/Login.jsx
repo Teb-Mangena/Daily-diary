@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 import { useLogin } from "../../hooks/useLogin";
+import '../../styles/forms/Login.css';
 
 const Login = () => {
   const [email,setEmail] = useState('');
@@ -35,6 +37,7 @@ const Login = () => {
 
       <button className="btn-login" disabled={isLoading}>Login</button>
       {error && <div className="err-mssg">{error}</div>}
+      <p>Don't have an account <Link to='/signup'>signup</Link></p>
     </form>
    );
 }

@@ -5,6 +5,7 @@ import { formatDistanceToNow } from "date-fns";
 import EditButton from "./buttons/EditButton";
 import DeleteButton from "./buttons/DeleteButton";
 import { useAuthContext } from "../hooks/useAuthContext";
+import '../styles/DiaryDetails.css';
 
 const DiaryDetails = () => {
   const {id} = useParams();
@@ -39,14 +40,14 @@ const DiaryDetails = () => {
       <div className="single-diary">
         {diary && (
           <>
-            <div className="left-section">
+            <div className="left-sect">
               <h2 className="single-title">{diary.title}</h2>
               <p className="single-snippet">{diary.snippet}</p>
               <p className="single-body">
                 {diary.body}
               </p>
             </div>
-            <div className="right-section">
+            <div className="right-sect">
               <p>Posted {formatDistanceToNow(new Date(diary.createdAt), {addSuffix:true})}</p>
               <EditButton id={diary._id} />
               <DeleteButton id={diary._id} />

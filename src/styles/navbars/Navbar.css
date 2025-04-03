@@ -1,0 +1,109 @@
+/* Base Styling */
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #333;
+  color: white;
+  position: relative;
+}
+
+.left-section h1 a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links,
+.no-user {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li,
+.no-user li {
+  margin: 0 1rem;
+}
+
+.nav-links a,
+.no-user a {
+  text-decoration: none;
+  color: white;
+}
+
+.userDetails {
+  margin-right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-logout {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-logout:hover {
+  background-color: #e60000;
+}
+
+/* Hamburger Button - Initially hidden */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive Styling for Mobile Devices */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  /* Hide normal nav-links by default on mobile */
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background-color: #444;
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+
+  /* Display nav-links when toggled */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+
+  /* Optionally, you can choose to hide "no-user" list on mobile and integrate it with the toggled menu */
+  .no-user {
+    display: none;
+  }
+
+  .userDetails{
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+  }
+}

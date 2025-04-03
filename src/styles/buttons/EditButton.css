@@ -1,0 +1,122 @@
+/* EditButton.css */
+
+/* Styling for the primary "Edit" button */
+.edit {
+  background-color: #007bff; /* Primary blue */
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.edit:disabled {
+  background-color: #80bdff;
+  cursor: not-allowed;
+}
+
+/* Container for the edit input fields and textarea */
+.edits-div {
+  margin-top: 1rem;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Styling for text inputs and textarea within the edits-div */
+.edits-div input,
+.edits-div textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Ensure the textarea has a minimum height and allows vertical resizing */
+.edits-div textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Styling for the "Save Changes" button */
+.changes {
+  background-color: #28a745; /* Green */
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.changes:hover:not(:disabled) {
+  background-color: #218838;
+}
+
+.changes:disabled {
+  background-color: #90ee90;
+  cursor: not-allowed;
+}
+
+/* Loading message styling */
+.loading {
+  font-size: 1rem;
+  color: #6c757d;
+  text-align: center;
+}
+
+/* Error message styling */
+.err-mssg {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: #ffe6e6;
+  border: 1px solid #ff4d4d;
+  color: #ff4d4d;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Success message styling */
+.succ-mssg {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: #e6ffe6;
+  border: 1px solid #009933;
+  color: #009933;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 480px) {
+  .edit,
+  .changes {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .edits-div input,
+  .edits-div textarea {
+    font-size: 0.95rem;
+  }
+
+  .err-mssg,
+  .succ-mssg {
+    font-size: 0.8rem;
+  }
+}

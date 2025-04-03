@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../hooks/useAuthContext";
+import '../../styles/buttons/DeleteButton.css'
 
 const DeleteButton = ({id}) => {
   const [error,setError] = useState(false);

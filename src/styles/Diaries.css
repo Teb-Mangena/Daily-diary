@@ -1,0 +1,53 @@
+/* Diaries.css */
+
+/* Card container for each diary entry */
+.diaries {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for visual feedback */
+.diaries:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+.diaries h3 {
+  margin: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Paragraph styling for snippet and date info */
+.diaries p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Ensure links inside the component inherit these styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .diaries {
+    padding: 1rem;
+  }
+
+  .diaries h3 {
+    font-size: 1.3rem;
+  }
+
+  .diaries p {
+    font-size: 0.9rem;
+  }
+}

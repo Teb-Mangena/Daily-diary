@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDiaryContext } from "../hooks/useDiaryContext";
 import { useAuthContext } from "../hooks/useAuthContext";
+import '../styles/forms/DiaryForm.css';
 
 const DiaryForm = () => {
   const [title,setTitle] = useState('');

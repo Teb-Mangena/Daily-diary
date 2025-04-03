@@ -1,0 +1,87 @@
+/* DiaryDetails.css */
+
+/* Container for the diary details */
+.single-diary {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* Left-sect: Diary content */
+.left-sect {
+  flex: 2;
+}
+
+.single-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.single-snippet {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.single-body {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Right-sect: Metadata & action buttons */
+.right-sect {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.right-sect p {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.right-sect a p {
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Error Message Styling */
+.err-mssg {
+  margin-top: 1rem;
+  padding: 1rem;
+  font-weight: bold;
+  color: #ff4d4d;
+  background-color: #ffe6e6;
+  border: 1px solid #ff4d4d;
+  border-radius: 4px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .single-diary {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .left-sect,
+  .right-sect {
+    width: 100%;
+  }
+  .right-sect {
+    align-items: center;
+    text-align: center;
+  }
+  .right-sect a p {
+    margin-top: 1rem;
+  }
+}

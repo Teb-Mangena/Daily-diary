@@ -1,0 +1,88 @@
+/* Container styling for the diary form */
+.diary-form {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Title styling */
+.diary-form-title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Label styling */
+.diary-form label {
+  font-weight: bold;
+}
+
+/* Input and textarea styling */
+.diary-form input,
+.diary-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.diary-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Submit button styling */
+.create-diary {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.create-diary:hover {
+  background-color: #555;
+}
+
+/* Error and Success message styling */
+.err-mssg, .succ-mssg {
+  text-align: center;
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+.err-mssg {
+  color: #ff4d4d;
+}
+
+.succ-mssg {
+  color: #009933;
+}
+
+/* Responsive adjustments for smaller devices */
+@media (max-width: 480px) {
+  .diary-form {
+    padding: 1rem;
+    max-width: 90%;
+    margin: 1rem auto;
+  }
+
+  .diary-form-title {
+    font-size: 1.3rem;
+  }
+
+  .create-diary {
+    padding: 0.65rem;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,64 @@
+/* Form Styling */
+form.login {
+  width: 100%;
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-header {
+  color: #002366; /* Navy blue */
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+form label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: black;
+}
+
+form input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus {
+  border-color: #002366; /* Navy blue */
+  outline: none;
+}
+
+.btn-signup {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #008000; /* Green */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-signup:hover {
+  background-color: #006400; /* Darker green */
+}
+
+.err-mssg {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: #ff4500; /* Vibrant red */
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+}

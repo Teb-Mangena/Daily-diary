@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../hooks/useAuthContext";
+import '../../styles/buttons/EditButton.css';
 
 const EditButton = ({ id }) => {
   const [error, setError] = useState(false);
