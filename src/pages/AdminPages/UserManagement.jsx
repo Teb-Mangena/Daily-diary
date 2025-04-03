@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import AdminNav from "../../components/AdminComponents/AdminNav";
 import EditUserbtn from "../../components/buttons/EditUserbtn";
 import DeleteUserbtn from "../../components/buttons/DeleteUserbtn";
+import '../../styles/admins/UserManagement.css';
 
 const UserManagement = () => {
   const [error, setError] = useState(false);

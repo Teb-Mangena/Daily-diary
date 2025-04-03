@@ -1,0 +1,118 @@
+/* UserManagement.css */
+
+/* Outer container styling for the admin dashboard */
+.admin-dashboard {
+  padding: 2rem;
+  background-color: #f4f6f8;
+  min-height: 100vh;
+}
+
+/* Title styling */
+.admin-dashboard h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Grid layout: Sidebar navigation and main content */
+.grid-adminDashboard {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2rem;
+}
+
+/* Responsive adjustment: Stack columns vertically on smaller screens */
+@media (max-width: 768px) {
+  .grid-adminDashboard {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* News section container styling */
+.news {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Total users text styling */
+.total-users {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+/* Error message appearance */
+.err-mssg {
+  background-color: #ffe6e6;
+  color: #ff4d4d;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Loading spinner styling */
+.loading-circle {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Container for all user info cards */
+.all-users-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Styling for individual user info blocks */
+.flex-user-list {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.flex-user-list:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for individual text elements inside user cards */
+.flex-user-list .name,
+.flex-user-list .last-name,
+.flex-user-list .user-emails,
+.flex-user-list .user-role,
+.flex-user-list .joined-when {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Timestamp (joined-when) styling */
+.flex-user-list .joined-when {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* Container for Edit and Delete buttons */
+.action-buttons {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+}

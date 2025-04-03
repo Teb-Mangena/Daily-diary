@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AdminNav from "../../components/AdminComponents/AdminNav";
+import '../../styles/admins/Activity.css';
 
 const Activity = () => {
   const [title,setTitle] = useState('');

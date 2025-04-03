@@ -4,6 +4,7 @@ import { formatDistanceToNow } from "date-fns";
 import AdminNav from "../../components/AdminComponents/AdminNav";
 import AdminEditButton from "../../components/buttons/AdminEditButton";
 import AdminDeleteButton from "../../components/buttons/AdminDeleteButton";
+import '../../styles/admins/ActivityDetails.css';
 
 const ActivityDetails = () => {
   const { id } = useParams();
@@ -40,7 +41,7 @@ const ActivityDetails = () => {
                 <h3 className="activity-title">{activity.title}</h3>
                 <p className="activity-description">{activity.body}</p>
               </div>
-              <div className="right-section">
+              <div className="right-section-act">
                 <p>
                   Posted{" "}
                   {formatDistanceToNow(new Date(activity.createdAt), {

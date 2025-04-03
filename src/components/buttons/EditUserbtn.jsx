@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import '../../styles/buttons/EditUserbtn.css';
 
 const EditUserbtn = ({ id }) => {
   const [error, setError] = useState(false);

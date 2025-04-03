@@ -1,0 +1,59 @@
+/* DeleteUserbtn.css */
+
+/* Style for the delete button */
+.AdminDelete {
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0.5rem 0;
+}
+
+.AdminDelete:hover:not(:disabled) {
+  background-color: #e60000;
+}
+
+.AdminDelete:disabled {
+  background-color: #ff9999;
+  cursor: not-allowed;
+}
+
+/* Style for error messages */
+.err-mssg {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: #ffe6e6;
+  border: 1px solid #ff4d4d;
+  color: #ff4d4d;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Style for success messages */
+.succ-mssg {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: #e6ffe6;
+  border: 1px solid #009933;
+  color: #009933;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 480px) {
+  .AdminDelete {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .err-mssg,
+  .succ-mssg {
+    font-size: 0.8rem;
+  }
+}

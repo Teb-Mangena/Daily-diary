@@ -3,6 +3,7 @@ import AdminNav from "../../components/AdminComponents/AdminNav";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { formatDistanceToNow } from "date-fns";
 import { Link } from "react-router-dom";
+import '../../styles/admins/AdminDashboard.css';
 
 const AdminDashboard = () => {
   const [error,setError] = useState(false);
