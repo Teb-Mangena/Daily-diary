@@ -33,7 +33,7 @@ const UserManagement = () => {
 
   useEffect(()=>{
     const getTotalUsers = async () => {
-      const response = await fetch('/api/user/count');
+      const response = await fetch('https://daily-diary-2-1ebf2ddc2803.herokuapp.com/api/user/count');
 
       const data = await response.json();
 
