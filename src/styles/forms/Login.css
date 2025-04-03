@@ -23,6 +23,16 @@
   gap: 1rem;
 }
 
+/* Style for the diary image */
+.dairy-amico {
+  display: block;          /* Makes the image a block element so margin auto works */
+  margin: 1rem auto;       /* Centers the image horizontally with some vertical spacing */
+  max-width: 300px;        /* Limits the maximum width, adjust as needed */
+  width: 100%;             /* Allows the image to scale responsively */
+  height: auto;            /* Maintains the image's aspect ratio */
+  padding: 0.5rem;         /* Optional: adds some internal spacing */
+}
+
 /* Header styling */
 .login-header {
   text-align: center;
@@ -154,3 +164,4 @@
     font-size: 0.85rem;
   }
 }
+

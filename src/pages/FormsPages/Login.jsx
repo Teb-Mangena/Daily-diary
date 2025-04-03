@@ -20,6 +20,8 @@ const Login = () => {
       <form className="login" onSubmit={handleSubmit}>
         <h2 className="login-header">Login</h2>
 
+        <img className="dairy-amico" src="images/Diary-amico.png" alt="Diary" />
+
         <label>Email:</label>
         <input
           type="email"

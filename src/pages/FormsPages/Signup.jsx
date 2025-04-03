@@ -22,6 +22,8 @@ const Signup = () => {
       <form className="login" onSubmit={handleSubmit}>
         <h2 className="login-header">Signup</h2>
 
+        <img className="dairy-amico" src="images/Diary-pana.png" alt="Diary" />
+
         <label>Name:</label>
         <input
           type="text"
