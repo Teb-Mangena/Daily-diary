@@ -35,7 +35,7 @@ const HomePage = () => {
   return (
     <div className="grid-display-home">
       <div className="HomePage">
-        <h1>My Diaries - {user.name}</h1>
+        <h1>{user.name}'s daily diaries</h1>
         <div className="personal-diary">
           {diaries &&
             diaries.map((diary) => (

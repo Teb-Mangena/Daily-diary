@@ -9,7 +9,8 @@
 /* Styling for the navigation list */
 .adm-dashboard {
   list-style: none;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   margin: 0;
   padding: 0;
